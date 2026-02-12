@@ -1,87 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Happy Valentine's Day ❤️</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(to right, #ff758c, #ff7eb3);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            font-family: 'Arial', sans-serif;
-            text-align: center;
-            color: white;
-        }
+<meta charset="UTF-8">
+<title>For My Love ❤️</title>
 
-        h1 {
-            font-size: 3em;
-            margin-bottom: 10px;
-        }
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: linear-gradient(135deg, #ff9ecf, #ff5e9c);
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    color: white;
+}
 
-        p {
-            font-size: 1.5em;
-        }
+/* Floating hearts */
+.heart {
+    position: absolute;
+    color: #fff;
+    animation: floatUp 6s linear infinite;
+    font-size: 20px;
+    opacity: 0.8;
+}
 
-        .heart {
-            font-size: 60px;
-            animation: heartbeat 1s infinite;
-        }
+@keyframes floatUp {
+    0% {
+        transform: translateY(100vh) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-10vh) scale(1.5);
+        opacity: 0;
+    }
+}
 
-        @keyframes heartbeat {
-            0% { transform: scale(1); }
-            25% { transform: scale(1.1); }
-            50% { transform: scale(1); }
-            75% { transform: scale(1.1); }
-            100% { transform: scale(1); }
-        }
+/* Main container */
+.container {
+    z-index: 2;
+}
 
-        button {
-            margin-top: 20px;
-            padding: 12px 24px;
-            font-size: 18px;
-            border: none;
-            border-radius: 25px;
-            background: white;
-            color: #ff4f79;
-            cursor: pointer;
-            transition: 0.3s;
-        }
+h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
 
-        button:hover {
-            background: #ffe6ee;
-        }
+p {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
 
-        .spotify-player {
-            margin-top: 30px;
-        }
-    </style>
+/* Bubu bubble */
+.bubu {
+    background: white;
+    color: #ff4f9a;
+    padding: 15px 25px;
+    border-radius: 30px;
+    display: inline-block;
+    font-size: 18px;
+    margin-bottom: 20px;
+    animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Button */
+button {
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 30px;
+    background: white;
+    color: #ff4f9a;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #ffe6f2;
+    transform: scale(1.1);
+}
+
+.spotify {
+    margin-top: 20px;
+    display: none;
+}
+</style>
 </head>
+
 <body>
 
-    <div class="heart">❤️</div>
-    <h1>Happy Valentine's Day my dear</h1>
+<div class="container">
+    <h1>Happy Valentine's Day my dear 💖</h1>
     <p>I love you forever 💕</p>
 
-    <!-- Button to encourage user interaction -->
-    <button onclick="document.getElementById('spotify').scrollIntoView();">
-        Play Our Song 🎵
-    </button>
-
-    <div class="spotify-player" id="spotify">
-        <iframe
-            src="https://open.spotify.com/embed/track/3qrdLVOClRU4yPkcXZ7c5u?utm_source=generator"
-            width="300"
-            height="380"
-            frameborder="0"
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            style="border-radius:12px;">
-        </iframe>
+    <div class="bubu" id="bubuText">
+        Bubu says: Click the button below! 🐻💗
     </div>
-
-</body>
-</html>
