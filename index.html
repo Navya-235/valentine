@@ -1,63 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Happy Valentine’s Day ❤️</title>
-  <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Comic Sans MS', cursive, sans-serif;
-      overflow: hidden;
-    }
+    <meta charset="UTF-8">
+    <title>Happy Valentine's Day ❤️</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #ff758c, #ff7eb3);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            color: white;
+        }
 
-    h1 {
-      color: #b30059;
-      margin-bottom: 8px;
-      text-shadow: 2px 2px #fff;
-    }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
 
-    h2 {
-      color: #800040;
-      margin-bottom: 25px;
-    }
+        p {
+            font-size: 1.5em;
+        }
 
-    .scene {
-      position: relative;
-      width: 320px;
-      height: 200px;
-    }
+        .heart {
+            font-size: 60px;
+            animation: heartbeat 1s infinite;
+        }
 
-    .character {
-      width: 90px;
-      height: 90px;
-      border-radius: 50%;
-      position: absolute;
-      bottom: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 16px;
-      font-weight: bold;
-      color: #fff;
-    }
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            50% { transform: scale(1); }
+            75% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
 
-    .dudu {
-      background: #ff66b2;
-      left: 20px;
-    }
+        button {
+            margin-top: 20px;
+            padding: 12px 24px;
+            font-size: 18px;
+            border: none;
+            border-radius: 25px;
+            background: white;
+            color: #ff4f79;
+            cursor: pointer;
+            transition: 0.3s;
+        }
 
-    .bubu {
-      background: #ff3385;
-      right: 20px;
-      animation: moveCloser 4s forwards;
-    }
+        button:hover {
+            background: #ffe6ee;
+        }
 
-    @keyframes moveCloser {
-      0% { right: 20px; }
-      60% { r
+        .spotify-player {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="heart">❤️</div>
+    <h1>Happy Valentine's Day my dear</h1>
+    <p>I love you forever 💕</p>
+
+    <!-- Button to encourage user interaction -->
+    <button onclick="document.getElementById('spotify').scrollIntoView();">
+        Play Our Song 🎵
+    </button>
+
+    <div class="spotify-player" id="spotify">
+        <iframe
+            src="https://open.spotify.com/embed/track/3qrdLVOClRU4yPkcXZ7c5u?utm_source=generator"
+            width="300"
+            height="380"
+            frameborder="0"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            style="border-radius:12px;">
+        </iframe>
+    </div>
+
+</body>
+</html>
